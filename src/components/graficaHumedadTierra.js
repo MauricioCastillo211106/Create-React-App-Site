@@ -22,7 +22,7 @@ const GraficaHumedadTierra = ({ soilHumidity }) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar type="monotone" dataKey="value" fill="#A67616" /> // Cambiar el color de relleno con la prop "fill"
+          <Bar type="monotone" dataKey="value" fill="#A67616" /> 
         </BarChart>
       </ResponsiveContainer>
     </div>

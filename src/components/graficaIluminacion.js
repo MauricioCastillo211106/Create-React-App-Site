@@ -22,7 +22,7 @@ const GraficaIluminacion = ({ luminosity }) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar type="monotone" dataKey="value" fill="#F9FF35" /> // Cambiar el color de relleno con la prop "fill"
+          <Bar type="monotone" dataKey="value" fill="#F9FF35" /> 
         </BarChart>
       </ResponsiveContainer>
     </div>

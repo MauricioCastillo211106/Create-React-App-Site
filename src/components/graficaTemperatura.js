@@ -22,7 +22,7 @@ const Graficas = ({ ambientTemperature }) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar type="monotone" dataKey="value" fill="#DC143C" /> // Cambiar el color de relleno con la prop "fill"
+          <Bar type="monotone" dataKey="value" fill="#DC143C" />
         </BarChart>
       </ResponsiveContainer>
     </div>
