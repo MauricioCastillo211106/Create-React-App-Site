@@ -22,10 +22,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "serve dist -s -n -L -p $PORT",
-    "build": "react-scripts build",
-    "test": "react-app-rewired test",
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "start": "serve build -s -n -L -p $PORT",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
