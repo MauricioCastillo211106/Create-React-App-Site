@@ -12,6 +12,7 @@ const GraficaHumedadTierra = ({ soilHumidity }) => {
           height={100}
           margin={{
             top: 5,
+            
             right: 30,
             left: 20,
             bottom: 5
