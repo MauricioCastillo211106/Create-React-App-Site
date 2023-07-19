@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import "../assets/styles/login.css"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,15 +27,26 @@ const Login = () => {
     };
 
     fetch("https://nexiasoftpi-production.up.railway.app/api/user/login", requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        
-        console.log(result)
-        navigate("/Datos");
+    .then((response) => response.json()) // Cambiar response.text() a response.json()
+    .then((result) => {
+      console.log(result); // Imprime la respuesta completa en la consola
+  
+      // Verificar si 'result.data' está presente y no es 'undefined' antes de acceder a 'result.data.token'
+      if (result.data && result.data.token) {
+        const token = result.data.token; // Obtener el token desde 'data'
+        console.log("Token:", token); // Imprimir el token en la consola
+  
+        // Aquí puedes utilizar el token para lo que necesites, como almacenarlo en el estado del componente o enviarlo en las solicitudes al servidor.
+  
+        setIsAuthenticated(true); 
+        navigate('/Datos'); // Redirigir al usuario a la página deseada (por ejemplo, la página "Datos")
+      } else {
+        alert('Credenciales incorrectas. Inténtalo de nuevo.');
       }
-      )
+      })
       .catch((error) => console.log("error", error));
   };
+
 
   return (
     <div className="container">
