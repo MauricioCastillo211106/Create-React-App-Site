@@ -38,7 +38,6 @@ const Login = ({ setIsAuthenticated }) => {
   
         // Aquí puedes utilizar el token para lo que necesites, como almacenarlo en el estado del componente o enviarlo en las solicitudes al servidor.
   
-        setIsAuthenticated(true); 
         navigate('/Datos'); // Redirigir al usuario a la página deseada (por ejemplo, la página "Datos")
       } else {
         alert('Credenciales incorrectas. Inténtalo de nuevo.');
