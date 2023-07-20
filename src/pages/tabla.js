@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navar';
-import "../assets/styles/graficas.css"
+import '../assets/styles/graficas.css';
 
 const Tablas = () => {
   const [data, setData] = useState([]);
@@ -44,26 +44,28 @@ const Tablas = () => {
     <div className='page_Principal'>
       <Navbar />
       <div className='container-tabla'>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Humedad ambiental</th>
-              <th>Humedad de la tierra</th>
-              <th>Temperatura</th>
-              <th>Iluminación</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(item => (
-              <tr key={item.id}>
-                <td>{item.ambientHumidity}</td>
-                <td>{item.soilHumidity}</td>
-                <td>{item.ambientTemperature}</td>
-                <td>{item.luminosity}</td>
+        <div className="table-responsive"> {/* Agrega la clase table-responsive aquí */}
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Humedad ambiental</th>
+                <th>Humedad de la tierra</th>
+                <th>Temperatura</th>
+                <th>Iluminación</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map(item => (
+                <tr key={item.id}>
+                  <td>{item.ambientHumidity}</td>
+                  <td>{item.soilHumidity}</td>
+                  <td>{item.ambientTemperature}</td>
+                  <td>{item.luminosity}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <h4>Media de la Humedad ambiental:</h4>
         <p>Media: {avgHumedadAmbiental}</p>
         <p>Varianza: {varHumedadAmbiental}</p>

@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Datos from './pages/HomePage';
 import Tablas from './pages/tabla';
 import Login from './pages/login';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <div>
@@ -14,14 +13,13 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            element={<Login />} // Asegúrate de pasar la función setIsAuthenticated a Login
           />
-          {isAuthenticated && (
             <>
               <Route exact path="/Datos" element={<Datos />} />
               <Route exact path="/Tablas" element={<Tablas />} />
             </>
-          )}
+    
         </Routes>
       </Router>
     </div>

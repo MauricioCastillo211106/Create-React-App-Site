@@ -23,12 +23,12 @@ function Navbar() {
       </h2>
       <ul className={active}>
         <li className="nav__item">
-          <a href="/Datos#" className="nav__link">
+          <a href="/Datos" className="nav__link">
             Graficas
           </a>
         </li>
         <li className="nav__item">
-          <a href="/Tablas#" className="nav__link">
+          <a href="/Tablas" className="nav__link">
             Distribución de probabilidad
           </a>
         </li>
